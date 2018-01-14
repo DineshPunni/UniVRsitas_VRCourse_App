@@ -10,11 +10,15 @@ public class SwitchRoom : MonoBehaviour {
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            SceneManager.LoadScene(1);
+            //SceneManager.LoadScene(1);
+            //Initiate.Fade
+            Initiate.Fade("SecondRoom", Color.black, 1);
+
         }
         else
         {
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
+            Initiate.Fade("MainScene", Color.black, 1);   
         }
         
     }
