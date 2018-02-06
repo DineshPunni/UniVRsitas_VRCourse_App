@@ -19,8 +19,8 @@ public class SpinObject : VRTK_InteractableObject {
     {
         base.StartUsing(currentUsingObj);
         rotationSpeed = 100;
-        Debug.Log("startusing");
-        spawnObject.SetActive(true);
+        if (spawnObject != null)
+            spawnObject.SetActive(true);
     }
 
 
@@ -28,9 +28,8 @@ public class SpinObject : VRTK_InteractableObject {
     {
         base.StopUsing(previousUsingObject, resetUsingObjectState);
         rotationSpeed = 0;
-        spawnObject.SetActive(false);
-        Debug.Log("stopUsing");
-
+        if(spawnObject!=null)
+            spawnObject.SetActive(false);
 
     }
 
