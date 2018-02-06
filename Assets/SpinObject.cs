@@ -5,19 +5,22 @@ using VRTK;
 
 public class SpinObject : VRTK_InteractableObject {
 
-    Transform content;
+    [Header("Content")]
+    public Transform museumObject;
+    public GameObject spawnObject;
+
     float rotationSpeed = 0;
 
 	void Start () {
 
-        content = transform.GetChild(0);
 	}
 
     public override void StartUsing(VRTK_InteractUse currentUsingObj)
     {
         base.StartUsing(currentUsingObj);
-        rotationSpeed = 200;
+        rotationSpeed = 100;
         Debug.Log("startusing");
+        spawnObject.SetActive(true);
     }
 
 
@@ -25,13 +28,15 @@ public class SpinObject : VRTK_InteractableObject {
     {
         base.StopUsing(previousUsingObject, resetUsingObjectState);
         rotationSpeed = 0;
+        spawnObject.SetActive(false);
+        Debug.Log("stopUsing");
+
 
     }
 
     protected override void Update ()
     {
-        content.transform.Rotate(new Vector3(0,rotationSpeed * Time.deltaTime, 0));	
-
+        museumObject.transform.Rotate(new Vector3(0,rotationSpeed * Time.deltaTime, 0));	
 	}
 
   
