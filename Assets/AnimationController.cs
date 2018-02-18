@@ -23,3 +23,12 @@ public class AnimationController : MonoBehaviour {
         treassureChest.GetComponentInChildren<Animator>().SetTrigger("Open");
     }
 }
+
+
+/*
+1. Deconstruct 
+2. One thing at a time
+3. Repetition
+4. Test everything and find out what works for you
+5. Debrief: Don't make the same mistake twice 
+     */
